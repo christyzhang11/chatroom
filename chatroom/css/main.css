@@ -23,6 +23,13 @@ h1.title{
 	display : none;
 }
 
+.postuser{
+	padding: 10px 20px;
+	font-weight: bold;
+}
+.posttime{
+	padding: 10px 30px;
+}
 #chatroom form {
 background: #000;
 padding: 3px;
