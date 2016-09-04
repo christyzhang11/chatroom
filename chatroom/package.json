@@ -1,0 +1,15 @@
+{
+  "name": "yuanz2-first-chatroom",
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "socket.io": "*",
+    "express": "*"
+    },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "author": "yuanz2",
+  "license": "ISC"
+}

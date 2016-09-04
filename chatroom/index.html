@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>FSE Chatroom</title>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+
+<body>
+    <ul id="messages"></ul>
+    <div class="form">
+        <input id="m" autocomplete="off" /><button id="post">Send</button>
+    </div>
+</body>
+        <script>
+        var socket = io();
+        $('#post').click(function() {
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+        });
+        $("#m").keydown(function(event) {
+            if (event.which == 13) {
+                $('#post').click();
+            }
+        });
+    </script>
+
+</html>
