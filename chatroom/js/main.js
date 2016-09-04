@@ -2,12 +2,12 @@ $(function(){
     var socket = io();
     //var connected = false;
 
-    $(".form").submit(function(){
+    $("#post").submit(function(){
         post();
         return false;
     });
 
-    $("#submit").click(function(){
+    $("#enterRoom").click(function(){
         getUserName();
         return false;
     });
@@ -18,7 +18,7 @@ $(function(){
 
     socket.on('userLeft', function(data) {
         var msg = $('<span class="left">').text(data.username + " left the chat room.");
-        $("#messages").append($('<li>')).append(msg);
+        $("#messages").append($('<li>').append(msg));
     });
 
     function getUserName() {
@@ -62,9 +62,9 @@ $(function(){
     }
 
     function formNewMessage(data){
-        var user = $('<span class="postuser" />').text(data.username);
+        var user = $('<span class="postuser" />').text(data.username + " : ");
         var time = $('<span class="posttime" />').text(data.timestamp);
         var msg = $('<span class="msgbody"/>').text(data.message);
-        $("#messages").append($('<li>')).append(user, msg, time);
+        $("#messages").append($('<li>').append(time,user, msg));
     }
 });
